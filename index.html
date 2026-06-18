@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>로컬 LLM 세팅 교육</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top">Local LLM</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#lesson1">1교시</a>
+        <a href="#lesson2">2교시</a>
+        <a href="#practice">실습</a>
+        <a href="#refs">공식 문서</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">폐쇄망 업무 환경을 고려한 교육</p>
+          <h1>로컬 LLM 세팅 입문</h1>
+          <p>
+            인터넷이 되는 교육 환경에서 Ollama와 Qwen Coder를 세팅하고,
+            개발 도구에서 로컬 AI를 사용하는 흐름을 실습합니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#lesson1">1교시 시작</a>
+            <a class="button" href="#lesson2">2교시 실습</a>
+          </div>
+        </div>
+        <div class="flow-panel" aria-label="로컬 LLM 구성 흐름">
+          <div>사용자</div>
+          <span></span>
+          <div>에이전트 또는 채팅 UI</div>
+          <span></span>
+          <div>Ollama</div>
+          <span></span>
+          <div>Qwen Coder</div>
+        </div>
+      </section>
+
+      <section class="section compact">
+        <h2>대상</h2>
+        <ul class="check-list">
+          <li>프로그래머</li>
+          <li>외부 AI 서비스를 업무에 바로 쓰기 어려운 개발자</li>
+          <li>로컬 LLM으로 코드 설명, 오류 분석, 메일 작성 등을 해보고 싶은 사람</li>
+        </ul>
+      </section>
+
+      <section id="lesson1" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">1교시</p>
+          <h2>이론 교육</h2>
+          <p>1교시는 구성요소와 역할까지만 설명합니다.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>구성요소</th>
+                <th>역할</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>모델</td>
+                <td>질문을 이해하고 답변을 생성함</td>
+              </tr>
+              <tr>
+                <td>서빙</td>
+                <td>모델을 실행하고 API로 연결해줌</td>
+              </tr>
+              <tr>
+                <td>에이전트</td>
+                <td>개발 도구에서 모델을 활용하게 해줌</td>
+              </tr>
+              <tr>
+                <td>채팅 UI</td>
+                <td>브라우저나 앱에서 모델과 대화하게 해줌</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="lesson2" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">2교시</p>
+          <h2>커맨드 세팅 & 간단 실습</h2>
+          <p>구성요소별 대표 도구를 소개하고, 이번 실습에서 사용할 조합을 설치합니다.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>구성요소</th>
+                <th>대표 도구</th>
+                <th>이번 실습</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>모델</td>
+                <td>Qwen(큐원), Llama(라마), Mistral(미스트랄)</td>
+                <td>Qwen Coder(큐원 코더)</td>
+              </tr>
+              <tr>
+                <td>서빙</td>
+                <td>Ollama(올라마), LM Studio(엘엠 스튜디오), llama.cpp(라마 씨피피)</td>
+                <td>Ollama(올라마)</td>
+              </tr>
+              <tr>
+                <td>에이전트</td>
+                <td>Continue(컨티뉴), Cline(씨라인), Roo Code(루 코드), Aider(에이더)</td>
+                <td>Continue(컨티뉴)</td>
+              </tr>
+              <tr>
+                <td>채팅 UI</td>
+                <td>Open WebUI(오픈 웹유아이), AnythingLLM(애니씽 엘엘엠), LM Studio(엘엠 스튜디오), Ollama CLI(올라마 명령어)</td>
+                <td>Ollama CLI(올라마 명령어)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Qwen Coder 모델별 대략 사양</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>모델</th>
+                <th>권장 메모리</th>
+                <th>그래픽카드</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0.5B</td>
+                <td>RAM 8GB</td>
+                <td>없어도 가능</td>
+                <td>가벼운 테스트용</td>
+              </tr>
+              <tr>
+                <td>1.5B</td>
+                <td>RAM 8GB</td>
+                <td>없어도 가능</td>
+                <td>자동완성, 가벼운 실습용</td>
+              </tr>
+              <tr>
+                <td>3B</td>
+                <td>RAM 8GB~16GB</td>
+                <td>없어도 가능</td>
+                <td>일반 노트북 실습 가능</td>
+              </tr>
+              <tr>
+                <td>7B</td>
+                <td>RAM 16GB 권장</td>
+                <td>NVIDIA VRAM 8GB 이상이면 좋음</td>
+                <td>이번 실습 추천</td>
+              </tr>
+              <tr>
+                <td>14B</td>
+                <td>RAM 32GB 권장</td>
+                <td>NVIDIA VRAM 12GB~16GB 권장</td>
+                <td>속도 부담 있음</td>
+              </tr>
+              <tr>
+                <td>32B</td>
+                <td>RAM 32GB~64GB 권장</td>
+                <td>NVIDIA VRAM 24GB 이상 권장</td>
+                <td>개인 PC 실습에는 무거움</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="note">
+          NVIDIA 그래픽카드가 있으면 GPU 가속을 쓰기 쉽습니다. NVIDIA가 아니어도 Windows에 Ollama 설치는 가능하지만,
+          GPU 가속이 안 잡히면 CPU 실행에 가까워져 많이 느릴 수 있습니다. WSL/Linux 설치는 Linux 개발 환경이나 CUDA 구성이
+          필요할 때 선택하는 방식이지 필수는 아닙니다.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>실습 순서</h2>
+          <p>아래 커맨드는 전부 오른쪽 위 복사 버튼으로 복사할 수 있습니다.</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <h3>Ollama 설치</h3>
+            <p><a href="https://ollama.com/download/windows" target="_blank" rel="noreferrer">Ollama Windows 다운로드</a>에서 설치 파일을 받아 실행합니다.</p>
+          </li>
+          <li>
+            <h3>Ollama 설치 확인</h3>
+            <pre><code class="language-bash">ollama --version</code></pre>
+          </li>
+          <li>
+            <h3>모델 다운로드</h3>
+            <pre><code class="language-bash">ollama pull qwen2.5-coder:7b</code></pre>
+          </li>
+          <li>
+            <h3>모델 실행</h3>
+            <pre><code class="language-bash">ollama run qwen2.5-coder:7b</code></pre>
+          </li>
+          <li>
+            <h3>실행 중인 모델 확인</h3>
+            <pre><code class="language-bash">ollama ps</code></pre>
+          </li>
+          <li>
+            <h3>모델 목록 확인</h3>
+            <pre><code class="language-bash">ollama list</code></pre>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <h2>Continue YAML 설정</h2>
+          <p>Continue는 `config.yaml` 파일에 Ollama 모델 정보를 적어서 연결합니다.</p>
+        </div>
+
+        <h3>설정 파일 위치</h3>
+        <pre><code class="language-text">C:\Users\사용자명\.continue\configs\config.yaml</code></pre>
+
+        <h3>작성 예시</h3>
+        <pre><code class="language-yaml">name: Local Qwen
+version: 0.0.1
+schema: v1
+
+models:
+  - name: Qwen2.5 Coder 7B
+    provider: ollama
+    model: qwen2.5-coder:7b
+    apiBase: http://localhost:11434
+    roles:
+      - chat
+      - edit
+      - apply
+    defaultCompletionOptions:
+      contextLength: 4096
+      temperature: 0.2</code></pre>
+
+        <ul class="check-list">
+          <li>`model` 값은 `ollama list`에 보이는 모델명과 정확히 같아야 합니다.</li>
+          <li>교육에서는 `qwen2.5-coder:7b`처럼 태그를 명확히 씁니다.</li>
+          <li>메모리 부족이 나면 `contextLength`를 낮추거나 더 작은 모델을 사용합니다.</li>
+        </ul>
+      </section>
+
+      <section id="practice" class="section">
+        <div class="section-heading">
+          <h2>간단 실습</h2>
+          <p>C# 코드 설명, 리팩터링, 메일 작성까지 진행합니다.</p>
+        </div>
+
+        <article class="practice">
+          <h3>실습 1: C# 코드 설명</h3>
+          <pre><code class="language-csharp">public List&lt;string&gt; FindDuplicates(List&lt;string&gt; items)
+{
+    var seen = new HashSet&lt;string&gt;();
+    var duplicates = new HashSet&lt;string&gt;();
+
+    foreach (var item in items)
+    {
+        if (seen.Contains(item))
+        {
+            duplicates.Add(item);
+        }
+        else
+        {
+            seen.Add(item);
+        }
+    }
+
+    return duplicates.ToList();
+}</code></pre>
+          <pre><code class="language-text">이 C# 함수가 어떤 일을 하는지 설명하고, 시간 복잡도와 공간 복잡도를 알려줘.</code></pre>
+        </article>
+
+        <article class="practice">
+          <h3>실습 2: C# 코드 리팩터링</h3>
+          <pre><code class="language-csharp">public string GetUserStatus(User user)
+{
+    if (user != null)
+    {
+        if (user.IsDeleted == false)
+        {
+            if (user.IsActive == true)
+            {
+                if (user.LastLoginDate != null)
+                {
+                    var days = (DateTime.Now - user.LastLoginDate.Value).Days;
+                    if (days &lt; 30)
+                    {
+                        return "Active";
+                    }
+                    else
+                    {
+                        return "Dormant";
+                    }
+                }
+                else
+                {
+                    return "NeverLoggedIn";
+                }
+            }
+            else
+            {
+                return "Inactive";
+            }
+        }
+        else
+        {
+            return "Deleted";
+        }
+    }
+    else
+    {
+        return "Unknown";
+    }
+}</code></pre>
+          <pre><code class="language-text">이 C# 코드를 더 읽기 좋게 리팩터링해줘.
+중첩 if를 줄이고, 상태값이 어떻게 결정되는지도 간단히 설명해줘.</code></pre>
+        </article>
+
+        <article class="practice">
+          <h3>실습 3: 메일 작성</h3>
+          <pre><code class="language-text">내부 API 장애로 배치 작업이 실패했다.
+원인은 인증 토큰 만료였고, 토큰 갱신 후 재처리는 완료됐다.
+영향 범위는 전일 23:00부터 금일 01:00까지 생성된 일부 리포트다.</code></pre>
+          <pre><code class="language-text">위 상황을 바탕으로 운영팀과 개발팀에 보낼 장애 공유 메일 초안을 작성해줘.
+원인, 영향 범위, 조치 내용, 재발 방지 계획 순서로 정리해줘.</code></pre>
+        </article>
+      </section>
+
+      <section id="refs" class="section">
+        <div class="section-heading">
+          <h2>확인한 공식 문서</h2>
+          <p>웹사이트 내용을 만들 때 기준으로 삼은 공식 문서입니다.</p>
+        </div>
+        <div class="link-grid">
+          <a href="https://ollama.com/download/windows" target="_blank" rel="noreferrer">
+            <strong>Ollama Windows 다운로드</strong>
+            <span>Windows 설치 파일</span>
+          </a>
+          <a href="https://ollama.com/library/qwen2.5-coder" target="_blank" rel="noreferrer">
+            <strong>Ollama qwen2.5-coder</strong>
+            <span>모델 태그와 크기</span>
+          </a>
+          <a href="https://docs.continue.dev/reference" target="_blank" rel="noreferrer">
+            <strong>Continue config.yaml Reference</strong>
+            <span>YAML 설정 형식</span>
+          </a>
+          <a href="https://docs.continue.dev/guides/ollama-guide" target="_blank" rel="noreferrer">
+            <strong>Continue Ollama Guide</strong>
+            <span>Ollama 연결 가이드</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Local LLM 교육 웹사이트</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
