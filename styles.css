@@ -77,10 +77,6 @@ main {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 36px;
-  align-items: center;
   min-height: calc(100vh - 64px);
   padding: 56px 0 64px;
 }
@@ -132,28 +128,39 @@ main {
 }
 
 .flow-panel {
-  display: grid;
-  gap: 12px;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
-  box-shadow: var(--shadow);
 }
 
 .flow-panel div {
+  display: grid;
+  gap: 4px;
+  flex: 1;
   padding: 14px 16px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--accent-soft);
-  font-weight: 800;
   text-align: center;
 }
 
-.flow-panel span {
-  width: 2px;
-  height: 20px;
-  margin: 0 auto;
+.flow-panel strong {
+  font-weight: 800;
+}
+
+.flow-panel div span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.flow-panel i {
+  align-self: center;
+  width: 26px;
+  height: 2px;
   background: var(--accent);
 }
 
@@ -344,7 +351,6 @@ pre code {
   }
 
   .hero {
-    grid-template-columns: 1fr;
     min-height: auto;
     padding-top: 38px;
   }
@@ -355,6 +361,16 @@ pre code {
 
   .section {
     padding: 22px;
+  }
+
+  .flow-panel {
+    flex-direction: column;
+  }
+
+  .flow-panel i {
+    width: 2px;
+    height: 18px;
+    margin: 0 auto;
   }
 
   .link-grid {
