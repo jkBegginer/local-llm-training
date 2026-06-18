@@ -225,6 +225,18 @@ th {
   font-size: 14px;
 }
 
+.col-component {
+  width: 18%;
+}
+
+.col-role {
+  width: 56%;
+}
+
+.col-example {
+  width: 26%;
+}
+
 tr:last-child td {
   border-bottom: 0;
 }

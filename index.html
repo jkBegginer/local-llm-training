@@ -33,14 +33,65 @@
         </div>
       </section>
 
-      <section class="section structure-section">
+      <section class="section compact">
+        <h2>대상</h2>
+        <ul class="check-list">
+          <li>프로그래머</li>
+          <li>외부 AI 서비스를 업무에 바로 쓰기 어려운 개발자</li>
+          <li>로컬 LLM으로 코드 설명, 오류 분석, 메일 작성 등을 해보고 싶은 사람</li>
+        </ul>
+      </section>
+
+      <section id="lesson1" class="section">
         <div class="section-heading">
-          <p class="eyebrow">기본 구조</p>
-          <h2>로컬 LLM은 이렇게 연결됩니다</h2>
-          <p>
-            사용자는 개발 도구나 채팅 화면에서 질문하고, Ollama가 로컬 모델을 실행해 응답을 돌려줍니다.
-          </p>
+          <p class="eyebrow">1교시</p>
+          <h2>이론 교육</h2>
+          <p>1교시는 구성요소와 역할까지만 설명합니다.</p>
         </div>
+
+        <div class="table-wrap">
+          <table>
+            <colgroup>
+              <col class="col-component">
+              <col class="col-role">
+              <col class="col-example">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>구성요소</th>
+                <th>역할</th>
+                <th>대표 예시</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>모델</td>
+                <td>질문을 이해하고 답변을 생성함</td>
+                <td>Qwen Coder</td>
+              </tr>
+              <tr>
+                <td>서빙</td>
+                <td>모델을 실행하고 API로 연결해줌</td>
+                <td>Ollama</td>
+              </tr>
+              <tr>
+                <td>에이전트</td>
+                <td>개발 도구에서 모델을 활용하게 해줌</td>
+                <td>Continue</td>
+              </tr>
+              <tr>
+                <td>채팅 UI</td>
+                <td>브라우저나 앱에서 모델과 대화하게 해줌</td>
+                <td>Ollama CLI</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>기본 구조</h3>
+        <p>
+          사용자는 개발 도구나 채팅 화면에서 질문하고, Ollama가 로컬 모델을 실행해 응답을 돌려줍니다.
+        </p>
         <div class="flow-panel" aria-label="로컬 LLM 기본 구조">
           <div>
             <strong>사용자</strong>
@@ -61,52 +112,6 @@
             <strong>Qwen Coder</strong>
             <span>답변을 생성하는 모델</span>
           </div>
-        </div>
-      </section>
-
-      <section class="section compact">
-        <h2>대상</h2>
-        <ul class="check-list">
-          <li>프로그래머</li>
-          <li>외부 AI 서비스를 업무에 바로 쓰기 어려운 개발자</li>
-          <li>로컬 LLM으로 코드 설명, 오류 분석, 메일 작성 등을 해보고 싶은 사람</li>
-        </ul>
-      </section>
-
-      <section id="lesson1" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">1교시</p>
-          <h2>이론 교육</h2>
-          <p>1교시는 구성요소와 역할까지만 설명합니다.</p>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>구성요소</th>
-                <th>역할</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>모델</td>
-                <td>질문을 이해하고 답변을 생성함</td>
-              </tr>
-              <tr>
-                <td>서빙</td>
-                <td>모델을 실행하고 API로 연결해줌</td>
-              </tr>
-              <tr>
-                <td>에이전트</td>
-                <td>개발 도구에서 모델을 활용하게 해줌</td>
-              </tr>
-              <tr>
-                <td>채팅 UI</td>
-                <td>브라우저나 앱에서 모델과 대화하게 해줌</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </section>
 
