@@ -22,20 +22,26 @@ document.querySelectorAll("pre").forEach((block) => {
   const button = document.createElement("button");
   button.className = "copy-button";
   button.type = "button";
-  button.textContent = "복사";
   button.setAttribute("aria-label", "코드 복사");
+  button.setAttribute("title", "복사");
 
   button.addEventListener("click", async () => {
     try {
       await copyText(code.innerText);
-      button.textContent = "완료";
+      button.classList.add("is-copied");
+      button.setAttribute("aria-label", "복사 완료");
+      button.setAttribute("title", "복사 완료");
       window.setTimeout(() => {
-        button.textContent = "복사";
+        button.classList.remove("is-copied");
+        button.setAttribute("aria-label", "코드 복사");
+        button.setAttribute("title", "복사");
       }, 1200);
     } catch {
-      button.textContent = "실패";
+      button.setAttribute("aria-label", "복사 실패");
+      button.setAttribute("title", "복사 실패");
       window.setTimeout(() => {
-        button.textContent = "복사";
+        button.setAttribute("aria-label", "코드 복사");
+        button.setAttribute("title", "복사");
       }, 1200);
     }
   });
