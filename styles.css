@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --bg: #f6f7f9;
+  --bg: #f4f7fa;
   --surface: #ffffff;
   --ink: #17202a;
   --muted: #5b6673;
@@ -9,7 +9,7 @@
   --accent-dark: #123f4d;
   --accent-soft: #e7f4f7;
   --code-bg: #eef2f6;
-  --code-ink: #263241;
+  --code-ink: #111827;
   --shadow: 0 14px 40px rgba(17, 24, 39, 0.08);
 }
 
@@ -25,7 +25,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -75,7 +75,7 @@ a:hover {
   min-height: 64px;
   padding: 0 28px;
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
 }
 
@@ -83,6 +83,32 @@ a:hover {
   color: var(--ink);
   font-weight: 800;
   letter-spacing: 0;
+}
+
+.site-url {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: auto;
+  color: #2f80ed;
+  font-size: 13px;
+  font-weight: 800;
+  font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-url-icon {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .nav {
@@ -95,6 +121,14 @@ a:hover {
 .nav a {
   color: var(--muted);
   font-weight: 700;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
 }
 
 main {
@@ -104,7 +138,28 @@ main {
 
 .hero {
   min-height: calc(100vh - 64px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 40px;
+  align-items: center;
   padding: 56px 0 64px;
+}
+
+.hero-copy {
+  position: relative;
+  max-width: 860px;
+  padding-left: 28px;
+}
+
+.hero-copy::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 6px;
+  left: 0;
+  width: 5px;
+  border-radius: 999px;
+  background: var(--accent);
 }
 
 .hero-copy h1 {
@@ -118,6 +173,26 @@ main {
   max-width: 680px;
   color: var(--muted);
   font-size: 20px;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.hero-badges span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .eyebrow {
@@ -134,6 +209,56 @@ main {
   margin-top: 28px;
 }
 
+.hero-panel {
+  padding: 22px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #102a34;
+  color: #ffffff;
+  box-shadow: 0 22px 48px rgba(16, 42, 52, 0.2);
+}
+
+.panel-label {
+  margin: 0 0 14px;
+  color: #93d5e5;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.hero-panel ol {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-panel li {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 4px 10px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hero-panel li span {
+  grid-row: span 2;
+  color: #78c8dc;
+  font-weight: 900;
+}
+
+.hero-panel li strong {
+  font-size: 15px;
+}
+
+.hero-panel li em {
+  color: #c7d7dd;
+  font-size: 13px;
+  font-style: normal;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -145,6 +270,7 @@ main {
   background: var(--surface);
   color: var(--ink);
   font-weight: 800;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.06);
 }
 
 .button.primary {
@@ -199,6 +325,10 @@ main {
   box-shadow: var(--shadow);
 }
 
+.section:hover {
+  border-color: #cbd5e1;
+}
+
 .section.compact {
   padding-top: 26px;
   padding-bottom: 26px;
@@ -206,6 +336,8 @@ main {
 
 .section-heading {
   margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
 }
 
 .section h2 {
@@ -228,6 +360,7 @@ main {
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: 8px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
 }
 
 table {
@@ -249,6 +382,11 @@ th {
   background: #f0f3f6;
   color: #27313d;
   font-size: 14px;
+}
+
+td:first-child {
+  color: var(--accent-dark);
+  font-weight: 800;
 }
 
 .col-component {
@@ -284,14 +422,50 @@ tr:last-child td {
 
 .steps {
   display: grid;
-  gap: 16px;
+  gap: 0;
   margin: 0;
-  padding-left: 22px;
+  padding-left: 0;
+  list-style: none;
 }
 
-.steps li::marker {
-  color: var(--accent);
-  font-weight: 800;
+.steps li {
+  position: relative;
+  padding: 0 0 22px 44px;
+}
+
+.steps li::before {
+  content: counter(list-item);
+  position: absolute;
+  top: 2px;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.steps li::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  bottom: 0;
+  left: 13px;
+  width: 2px;
+  background: var(--line);
+}
+
+.steps li:last-child {
+  padding-bottom: 0;
+}
+
+.steps li:last-child::after {
+  display: none;
 }
 
 .check-list {
@@ -339,7 +513,7 @@ pre {
 
 code {
   font-family: Consolas, "Cascadia Code", "Courier New", monospace;
-  font-size: 14px;
+  font-size: 14.5px;
 }
 
 kbd {
@@ -371,7 +545,13 @@ kbd {
 
 pre code {
   display: block;
+  color: var(--code-ink);
   white-space: pre;
+}
+
+pre code.language-text {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+  line-height: 1.7;
 }
 
 .copy-button {
@@ -448,7 +628,7 @@ pre code {
 
 .tip-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 14px;
 }
 
@@ -458,6 +638,12 @@ pre code {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fbfcfd;
+  box-shadow: 0 8px 22px rgba(17, 24, 39, 0.04);
+}
+
+.tip-card:hover {
+  border-color: #b7c6d8;
+  transform: translateY(-1px);
 }
 
 .tip-card h3 {
@@ -521,6 +707,10 @@ pre code {
     padding: 14px 18px;
   }
 
+  .site-url {
+    margin-right: 0;
+  }
+
   .nav {
     width: 100%;
     overflow-x: auto;
@@ -528,6 +718,7 @@ pre code {
   }
 
   .hero {
+    grid-template-columns: 1fr;
     min-height: auto;
     padding-top: 38px;
   }
