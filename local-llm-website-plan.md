@@ -28,16 +28,16 @@
 | 구성요소 | 역할 |
 | --- | --- |
 | 모델 | 질문을 이해하고 답변을 생성함 |
-| 서빙 | 모델을 실행하고 API로 연결해줌 |
+| 서빙 | 모델을 실행하고 로컬 API로 사용할 수 있게 해줌 |
 | 에이전트 | 개발 도구에서 모델을 활용하게 해줌 |
-| 채팅 UI | 브라우저나 앱에서 모델과 대화하게 해줌 |
+| 대화 인터페이스 | 명령어, 브라우저, 앱에서 모델과 대화하게 해줌 |
 
 ### 전체 흐름
 
 ```text
 사용자
   ↓
-에이전트 또는 채팅 UI
+에이전트 또는 대화 인터페이스
   ↓
 서빙
   ↓
@@ -57,7 +57,7 @@
 | 모델 | Qwen(큐원), Llama(라마), Mistral(미스트랄) | Qwen Coder(큐원 코더) |
 | 서빙 | Ollama(올라마), LM Studio(엘엠 스튜디오), llama.cpp(라마 씨피피) | Ollama(올라마) |
 | 에이전트 | Continue(컨티뉴, VS Code/JetBrains 둘 다), Cline(씨라인), Roo Code(루 코드), Aider(에이더) | Continue(컨티뉴) |
-| 채팅 UI | Open WebUI(오픈 웹유아이), AnythingLLM(애니씽 엘엘엠), LM Studio(엘엠 스튜디오), Ollama CLI(올라마 명령어) | Ollama CLI(올라마 명령어) |
+| 대화 인터페이스 | Open WebUI(오픈 웹유아이), AnythingLLM(애니씽 엘엘엠), LM Studio(엘엠 스튜디오), Ollama CLI(올라마 명령어) | Ollama CLI(올라마 명령어) |
 
 ### Qwen Coder 모델별 대략 사양
 
@@ -266,7 +266,7 @@ public string GetUserStatus(User user)
 
 ## 8. 완료 기준
 
-- 모델, 서빙, 에이전트, 채팅 UI의 역할을 설명할 수 있다.
+- 모델, 서빙, 에이전트, 대화 인터페이스의 역할을 설명할 수 있다.
 - Ollama로 Qwen 모델을 실행할 수 있다.
 - 개발 도구에서 로컬 LLM을 연결할 수 있다.
 - 코드 설명과 메일 작성 실습을 완료한다.

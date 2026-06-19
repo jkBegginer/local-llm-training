@@ -2,6 +2,10 @@
 
 폐쇄망 업무 환경을 고려한 로컬 LLM 세팅 교육용 정적 웹사이트입니다.
 
+배포 주소:
+
+https://jkbegginer.github.io/local-llm-training/
+
 ## 파일 구성
 
 - `index.html`: 웹사이트 본문
@@ -15,24 +19,17 @@
 
 ## GitHub에 올릴 때
 
-처음 올리는 경우:
-
-```bash
-git init
-git add .
-git commit -m "Add local LLM training website"
-git branch -M main
-git remote add origin https://github.com/USER/REPOSITORY.git
-git push -u origin main
-```
-
-이미 Git 저장소라면:
+이 저장소에 변경사항을 반영하는 경우:
 
 ```bash
 git add .
-git commit -m "Update local LLM training website"
+git commit -m "Update website"
 git push
 ```
+
+원격 저장소:
+
+https://github.com/jkBegginer/local-llm-training.git
 
 ## GitHub Pages 배포
 
